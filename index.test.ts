@@ -1,4 +1,4 @@
-import { nextNonce } from "./dist";
+import { nextNonce } from ".";
 import { expect, test } from "bun:test";
 
 
