@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "sources": ["../index.ts"],
+  "sourcesContent": [
+    "let lastNonce = 0n\n\n// this is the max value alowed of nonce \nconst MAX_UINT64 = 18446744073709551615n\n\nexport function nextNonce() {\n    const now = BigInt(Date.now())\n\n    // Start from current time (ms) but ensure monotonic growth.\n    const candidate = now > lastNonce ? now : lastNonce + 1n;\n\n    if (candidate > MAX_UINT64) {\n        throw new Error(\"Nonce overflow: exceeded 64-bit unsigned integer limit.\");\n    }\n\n    lastNonce = candidate;\n    return candidate;\n}\n\n\n\n\n\n"
+  ],
+  "mappings": ";AAAA,IAAI,YAAY;AAGhB,IAAM,aAAa;AAEZ,SAAS,SAAS,GAAG;AAAA,EACxB,MAAM,MAAM,OAAO,KAAK,IAAI,CAAC;AAAA,EAG7B,MAAM,YAAY,MAAM,YAAY,MAAM,YAAY;AAAA,EAEtD,IAAI,YAAY,YAAY;AAAA,IACxB,MAAM,IAAI,MAAM,yDAAyD;AAAA,EAC7E;AAAA,EAEA,YAAY;AAAA,EACZ,OAAO;AAAA;",
+  "debugId": "135978DFA4201C0A64756E2164756E21",
+  "names": []
+}
