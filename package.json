@@ -1,6 +1,6 @@
 {
   "name": "big-nonce",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": ["nonce", "bigint", "monotonic"],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
